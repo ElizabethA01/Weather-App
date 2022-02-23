@@ -34,7 +34,7 @@ app.get("/", function(req, res) {
 // to access the input data and weather profile API. Access the request sent by the user
 app.post("/", function(req, res) {
   const location = req.body.cityName;
-  const appID = "688b7c772d5ee92dd861f92d9618c9f3";
+  const appID = "Your_app_ID";
   const units = "standard";
   const url = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + appID + "&units=" + units;
 
