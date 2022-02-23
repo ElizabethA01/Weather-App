@@ -1,0 +1,13 @@
+<%- include("partials/header.ejs") -%>
+
+    <div class="px-4 py-5 my-5 text-center">
+      <h1 class="display-5 fw-bold title">Weather App</h1>
+      <div class="col-lg-6 mx-auto">
+        <form class="mainText d-flex" action="/" method="post">
+          <input class="form-control input-lg" id="cityInput" type="text" placeholder="Insert City Location" name="cityName" required autofocus>
+          <button type="submit" class="btn btn-primary btn-lg px-4 gap-3 btn-go">Go</button>
+        </form>
+      </div>
+    </div>
+
+<%- include("partials/footer.ejs") -%>

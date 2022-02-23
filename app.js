@@ -1,12 +1,22 @@
 // linked the modules to js file
 const express = require("express");
-const https = require("https");
 const bodyParser = require("body-parser");
+const _ = require("lodash");
 
+// require template embedded js
+const ejs = require("ejs");
+
+// require https to access weather API
+const https = require("https");
 
 // to use express file
 const app = express();
 
+// type of errors
+const err404 = "This country doesn't exist. Please try again!"
+const otherError = "Something went wrong. Please try again!"
+
+app.set("view engine", "ejs");
 
 // to access the static (css and images )
 app.use(express.static("static"));
@@ -18,15 +28,16 @@ app.use(bodyParser.urlencoded({
 
 // this is the original website shwon to the user
 app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/");
+  res.render("home");
 });
 
 // to access the input data and weather profile API. Access the request sent by the user
 app.post("/", function(req, res) {
   const location = req.body.cityName;
   const appID = "688b7c772d5ee92dd861f92d9618c9f3";
-  const units = "metric";
+  const units = "standard";
   const url = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + appID + "&units=" + units;
+
 
   // to get data from an external resource you use GET. check https module
   https.get(url, function(response) {
@@ -40,32 +51,24 @@ app.post("/", function(req, res) {
         const weatherDescription = weatherData.weather[0].description;
         const icon = weatherData.weather[0].icon
         const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
-        res.sendFile(__dirname + "/result.html");
-
+        res.render("result", {
+          location: _.upperFirst(location),
+          temp: temp,
+          weatherDescription: weatherDescription,
+          imageURL: imageURL
         });
-
-
-        // res.write("<h1>The temperature in " + location + " is currently " + temp + " degrees Celcius</h1>");
-        // res.write("<h2>Right now there is " + weatherDescription + "</h2>");
-        // res.write("<img src=" + imageURL + ">");
-        // res.send();
-      })
+      });
+    } else if (response.statusCode === 404) {
+      res.render("failure", {
+        error: err404
+      });
     } else {
-      res.sendFile(__dirname + "/failure.html");
+      res.render("failure", {
+        error: otherError
+      });
     };
   })
 });
-
-// to replace text in results page to show for each Location
-// $(".title").click(function() {
-//   $(".title").text("IT'S GOING TO WORK!");
-// })
-// $(".weather-temp").text($(".weather-temp").text().replace("location", location));
-
-// Using the .load() callback function, this will replace the text in question with a span containing the text, that you can then alter using css...
-
-
-
 
 
 app.post("/failure", function(req, res) {

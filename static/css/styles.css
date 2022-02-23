@@ -3,9 +3,9 @@ body {
   text-align: center;
 }
 
-.title {
+img {
   padding-top: 5%;
-  padding-bottom: 2%;
+  width: 10%;
 }
 
 .b-example-divider {
@@ -20,17 +20,27 @@ body {
   padding-bottom: 1.5%;
 }
 
+.footer {
+  padding-bottom: 2%;
+}
+
 .form-control {
   box-sizing: border-box;
   height: auto;
   padding: 10px;
   font-size: 25px;
   margin-right: 8px;
-
 }
 
-.title {
+.resultTitle {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
 
+
+.title {
+  padding-top: 15%;
+  padding-bottom: 2%;
 }
 
 @media (min-width: 992px) {
