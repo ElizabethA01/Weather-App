@@ -1,6 +1,3 @@
-
-
-I created I used HTML, CSS, node.js, express, EJS and a weather API to create this app. 
 # Weather-App
 
 > A weather app that shows you the current temperature and weather conditions for a country or city using weather API. 
@@ -19,9 +16,8 @@ I created I used HTML, CSS, node.js, express, EJS and a weather API to create th
 
 
 ## General Information
-- The purpose of the project was to develop my skills building a game from scratch and using the coding languages JS, HTML and CSS as part of the course. 
+- The purpose of the project was to develop my skills using Express and EJS to cretae a web application to display live data from a weather API. 
 - I undertook the project as part of a course I undertook.
-
 
 ## Technologies Used
 - JavaScript (jQuery) - version ES6 
@@ -46,12 +42,13 @@ List the ready features here:
     "jsdom": "^19.0.0",
     "lodash": "^4.17.21"
   }
-  
-To set up the local environment, clone the repository. 
 
-Clone the repository using the command line using HTTPS
+- Clone the repository using the command line using HTTPS
 - Paste this command in the command line: $ git clone https://github.com/ElizabethA01/The-Simon-game.git or clone in VS code. 
-- Right click index.html and select open in default broswer (preferably Google Chrome).
+- Create an App ID on https://openweathermap.org/ and replace variable for appID in code.
+- Type npm install in terminal to download all dependencies.
+- Type npx nodemon app.js in terminal to run code in local environment.
+- Insert 'localhost:3000' in search engine to access weather app.
 
 
 ## Usage
@@ -71,7 +68,7 @@ To do:
 
 
 ## My Thoughts
-I really enjoyed recreating the game Simon, as I enjoy gaming. It was appealing and enjoyable to build the game from scratch and JS, HTML and CSS interact with each other to produce a web app. I learnt how to use the JavaScript jQuery to manipulate the HTML and the ease of use when creating websites. 
+I enjoyed this project creating a web application similar to bbc weather website and understanding the variety of applications that can be created using code. I learnt how to render a website with live api data using Express, JSON and EJS. 
 
 
 ## Acknowledgements
