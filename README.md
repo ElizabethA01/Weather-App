@@ -44,7 +44,7 @@ List the ready features here:
   }
 
 - Clone the repository using the command line using HTTPS
-- Paste this command in the command line: $ git clone https://github.com/ElizabethA01/The-Simon-game.git or clone in VS code. 
+- Paste this command in the command line: $ git clone https://github.com/ElizabethA01/Weather-App.git or clone in VS code. 
 - Create an App ID on https://openweathermap.org/ and replace variable for appID in code.
 - Type npm install in terminal to download all dependencies.
 - Type npx nodemon app.js in terminal to run code in local environment.
