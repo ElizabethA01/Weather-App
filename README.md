@@ -54,6 +54,8 @@ List the ready features here:
 ## Usage
 The user has to input the country or city in the text and click go and the app will tell you the current weather condition. 
 
+![image](https://user-images.githubusercontent.com/91877366/188286923-b556e8fc-0b34-462f-b333-59b108533e60.png)
+
 
 ## Project Status
 Project is: _completed_
